@@ -4,10 +4,12 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
 import { LayoutDashboard } from "lucide-react";
+import { checkUser } from "@/lib/checkUser";
 
-const Header = () => {
+const Header = async () => {
+  await checkUser()
   return (
-    <div className="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-md border-b border-gray-200 z-50">
+    <div className="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-md border-b border-gray-200">
       <nav className="container mx-auto flex justify-between items-center py-4 px-4">
         <Link href="/">
           Logo
